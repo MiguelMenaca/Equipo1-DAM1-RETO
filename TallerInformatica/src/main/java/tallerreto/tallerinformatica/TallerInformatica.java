@@ -4,6 +4,8 @@
 
 package tallerreto.tallerinformatica;
 
+import Servicio.InformeServicio;
+
 /**
  *
  * @author DAM105
@@ -11,6 +13,9 @@ package tallerreto.tallerinformatica;
 public class TallerInformatica {
 
     public static void main(String[] args) {
-        
+       InformeServicio informe = new InformeServicio();
+    informe.generarInforme();
+    
+}  
     }
-}
+
