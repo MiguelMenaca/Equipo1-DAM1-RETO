@@ -10,7 +10,7 @@ import Servicio.InformeServicio;
  * @author DAM105
  */
 public class TallerInformatica {
-
+//Main para que se Ejecute desde el Login
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

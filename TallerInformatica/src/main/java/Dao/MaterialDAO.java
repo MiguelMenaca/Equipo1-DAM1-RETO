@@ -13,6 +13,7 @@ import java.util.List;
  *
  * @author DAM105
  */
+//
 public class MaterialDAO {
 
     String url = "jdbc:mysql://localhost:3306/taller_informatica";
