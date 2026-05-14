@@ -1,2 +1,200 @@
 # Equipo1-DAM1-RETO
-Repositorio del equipo 1 para el trabajo del reto
+# Gestión y Localización del Material del Taller de Informática
+
+Aplicación de escritorio desarrollada en Java para inventariar, gestionar y localizar el material del taller de informática del IES Miguel Herrero Pereda.  
+Incluye base de datos MySQL, aplicación Java conectada mediante JDBC y una página web de visualización gráfica del taller.
+
+---
+
+# Índice
+
+- [Descripción del reto](#descripción-del-reto)
+- [Integrantes](#integrantes)
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
+- [Base de Datos](#base-de-datos)
+- [Diagrama de Casos de Uso](#diagrama-de-casos-de-uso)
+- [Diagrama de Clases](#diagrama-de-clases)
+- [Resultados obtenidos](#resultados-obtenidos)
+- [Resultados esperados por módulo](#resultados-esperados-por-módulo)
+- [Documentación adicional](#documentación-adicional)
+- [Valoración del proyecto](#valoración-del-proyecto)
+- [Mejoras futuras](#mejoras-futuras)
+- [Webgrafía](#webgrafía)
+
+---
+
+# Descripción del reto
+
+Este proyecto tiene como objetivo desarrollar una solución completa para la gestión del inventario del taller de informática del centro.
+
+Permite:
+- Registrar material informático.
+- Gestionar categorías y ubicaciones.
+- Localizar material rápidamente.
+- Controlar disponibilidad del inventario.
+- Visualizar gráficamente la distribución del taller mediante página web HTML/CSS.
+
+---
+
+# Integrantes
+
+## Sergio ITSA
+Responsabilidades:
+- Bases de Datos
+- LMSGI
+- Programación
+
+## Kiran IH
+Responsabilidades:
+- Sistemas Informáticos
+
+## Miguel MC
+Responsabilidades:
+- Plano del taller de LMSGI
+---
+
+# Tecnologías utilizadas
+
+- Java
+- MySQL
+- JDBC
+- NetBeans
+- Git & GitHub
+- HTML5
+- CSS3
+- Draw.io
+- JavaSript
+- XML
+- AWLS
+- Json
+- EC2
+- VCP
+- Claude
+---
+
+# Base de Datos
+
+Se ha diseñado e implementado una base de datos relacional en MySQL para almacenar el inventario del taller.
+
+Incluye:
+- Gestión de categorías
+- Ubicaciones
+- Material
+- Estados
+- Control de stock
+
+## Diagrama E/R
+
+<img width="982" height="591" alt="image" src="https://github.com/user-attachments/assets/790a7f4d-ce99-4a47-a73b-0f973c39ab58" />
+
+
+## Script SQL
+
+https://github.com/MiguelMenaca/Equipo1-DAM1-RETO/tree/main/BaseDeDatos
+
+---
+
+# Diagrama de Casos de Uso
+
+Permite representar las funcionalidades disponibles para cada perfil:
+
+- Administrador
+- Profesor
+
+![Casos de Uso](img/casos-uso.png)
+
+---
+
+# Diagrama de Clases
+
+Representación de la estructura orientada a objetos de la aplicación Java.
+
+![Diagrama de Clases](img/diagrama-clases.png)
+
+---
+
+# Resultados obtenidos
+
+## Completado
+- Base de Datos completa
+- Modelo relacional funcional
+- Scripts SQL
+- Sitio web HTML/CSS prácticamente completo
+- Documentación Markdown
+- Repositorio GitHub estructurado
+
+## En desarrollo
+- Sistemas Informáticos (AWS / servidores)
+- Aplicación Java de escritorio
+- Perfeccionamiento del plano visual del taller
+
+---
+
+# Resultados esperados por módulo
+
+## Bases de Datos
+- Diseño E/R
+- Modelo relacional
+- Script SQL
+- Triggers
+
+Estado: ✅ Completado
+
+## LMSGI
+- Web HTML/CSS
+- Plano visual del taller
+- Estructura semántica
+
+Estado: 🟡 Falta Plano Taller
+
+## Programación
+- Aplicación Java Swing
+- Conexión a base de datos
+- CRUD
+
+Estado: 🟡 En desarrollo
+
+## Sistemas Informáticos
+- AWS
+- EC2
+- MySQL remoto
+- Apache/Nginx
+
+Estado: 🟡 En desarrollo
+
+---
+
+# Documentación adicional
+
+## Guía de despliegue
+[📄 Guía de despliegue PDF](docs/guia-despliegue.pdf)
+
+## Manual de usuario
+[📄 Manual de usuario PDF](docs/manual-usuario.pdf)
+
+---
+
+# Valoración del proyecto
+
+Aspectos positivos:
+- Integración de varios módulos DAM
+
+Dificultades:
+- Configuración de AWS
+- Conexión remota MySQL
+- Integración Java + base de datos
+
+---
+
+# Mejoras futuras
+
+---
+
+# Webgrafía
+
+- https://dev.mysql.com/doc/
+- https://docs.oracle.com/javase/
+- https://github.com/
+- https://app.diagrams.net/
+
+---
