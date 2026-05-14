@@ -1,7 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package tallerreto.tallerinformatica;
 
 import Servicio.InformeServicio;
@@ -13,9 +12,10 @@ import Servicio.InformeServicio;
 public class TallerInformatica {
 
     public static void main(String[] args) {
-       InformeServicio informe = new InformeServicio();
-    informe.generarInforme();
-    
-}  
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new LoginForm().setVisible(true);
+            }
+        });
     }
-
+}
