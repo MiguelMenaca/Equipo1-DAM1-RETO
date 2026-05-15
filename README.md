@@ -195,8 +195,41 @@ Dificultades:
 
 # Webgrafía
 
-- https://dev.mysql.com/doc/
-- https://docs.oracle.com/javase/
+- MySQL Documentation  
+  https://dev.mysql.com/doc/
+
+- Java Documentation (Oracle)  
+  https://docs.oracle.com/en/java/
+
+- JDBC Documentation  
+  https://docs.oracle.com/javase/tutorial/jdbc/
+
+- GitHub Documentation  
+  https://docs.github.com/
+
+- NetBeans Documentation  
+  https://netbeans.apache.org/
+
+- HTML Reference (MDN Web Docs)  
+  https://developer.mozilla.org/en-US/docs/Web/HTML
+
+- CSS Reference (MDN Web Docs)  
+  https://developer.mozilla.org/en-US/docs/Web/CSS
+
+- Draw.io / Diagrams.net  
+  https://app.diagrams.net/
+
+- AWS EC2 Documentation  
+  https://docs.aws.amazon.com/ec2/
+
+- AWS VPC Documentation  
+  https://docs.aws.amazon.com/vpc/
+
+- Apache HTTP Server Documentation  
+  https://httpd.apache.org/docs/
+
+- Ubuntu Server Documentation  
+  https://ubuntu.com/server/docs
 - https://github.com/
 - https://app.diagrams.net/
 
