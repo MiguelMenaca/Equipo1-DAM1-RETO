@@ -230,7 +230,8 @@ Dificultades:
 
 - Ubuntu Server Documentation  
   https://ubuntu.com/server/docs
-- https://github.com/
-- https://app.diagrams.net/
+
+-Claude
+https://claude.ai/
 
 ---
