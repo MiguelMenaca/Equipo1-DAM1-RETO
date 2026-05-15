@@ -101,7 +101,8 @@ Permite representar las funcionalidades disponibles para cada perfil:
 - Administrador
 - Profesor
 
-![Casos de Uso](img/casos-uso.png)
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/ae6a775c-5e81-4603-9237-4bdb321435fc" />
+
 
 ---
 
