@@ -43,6 +43,8 @@ Responsabilidades:
 - Bases de Datos
 - LMSGI
 - Programación
+- Entornos de Desarrollo
+- Documentación
 
 ## Kiran IH
 Responsabilidades:
