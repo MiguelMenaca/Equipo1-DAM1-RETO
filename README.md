@@ -80,8 +80,10 @@ Incluye:
 - Gestión de categorías
 - Ubicaciones
 - Material
-- Estados
+- Movimientos
 - Control de stock
+- Prestamos
+- Usuarios
 
 ## Diagrama E/R
 
