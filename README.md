@@ -182,7 +182,7 @@ Estado: 🟡 En desarrollo
 # Valoración del proyecto
 
 Aspectos positivos:
-- Integración de varios módulos DAM
+- 
 
 Dificultades:
 - Configuración de AWS
