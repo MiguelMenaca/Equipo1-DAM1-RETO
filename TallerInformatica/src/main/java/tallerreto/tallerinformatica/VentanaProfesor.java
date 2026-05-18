@@ -31,17 +31,17 @@ public VentanaProfesor(Modelo.Usuario usuario) {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnInventario = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Bienvenido Profesor");
 
-        jButton1.setText("Ver Inventario");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnInventario.setText("Ver Inventario");
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnInventarioActionPerformed(evt);
             }
         });
 
@@ -60,7 +60,7 @@ public VentanaProfesor(Modelo.Usuario usuario) {
                 .addGap(140, 140, 140)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2)
-                    .addComponent(jButton1)
+                    .addComponent(btnInventario)
                     .addComponent(jLabel1))
                 .addContainerGap(154, Short.MAX_VALUE))
         );
@@ -70,7 +70,7 @@ public VentanaProfesor(Modelo.Usuario usuario) {
                 .addGap(58, 58, 58)
                 .addComponent(jLabel1)
                 .addGap(34, 34, 34)
-                .addComponent(jButton1)
+                .addComponent(btnInventario)
                 .addGap(44, 44, 44)
                 .addComponent(jButton2)
                 .addContainerGap(102, Short.MAX_VALUE))
@@ -79,12 +79,13 @@ public VentanaProfesor(Modelo.Usuario usuario) {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(this, "Módulo de inventario - próximamente");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+        new tallerreto.tallerinformatica.VentanaInventario(usuario).setVisible(true);
+    }//GEN-LAST:event_btnInventarioActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        new tallerreto.tallerinformatica.LoginForm().setVisible(true);
+this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -123,7 +124,7 @@ public VentanaProfesor(Modelo.Usuario usuario) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnInventario;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

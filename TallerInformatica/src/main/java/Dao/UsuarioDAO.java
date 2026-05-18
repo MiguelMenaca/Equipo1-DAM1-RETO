@@ -12,15 +12,14 @@ import java.sql.*;
  */
 public class UsuarioDAO {
 
-    String url = "jdbc:mysql://localhost:3306/taller_informatica";
-    String user = "Equipo1";
-    String password = "1234";
+   
+ 
 
     public Usuario login(String nombre, String pass) {
         Usuario u = null;
         String sql = "SELECT * FROM Usuarios WHERE nombre = ? AND password = ?";
         try {
-            Connection conn = DriverManager.getConnection(url, user, password);
+           Connection conn = ConexionDB.getInstance().getConexion();
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, nombre);
             ps.setString(2, pass);

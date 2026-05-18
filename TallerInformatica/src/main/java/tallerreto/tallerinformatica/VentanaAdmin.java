@@ -5,6 +5,8 @@
 package tallerreto.tallerinformatica;
 
 import javax.swing.JOptionPane;
+import java.util.List;
+import java.util.ArrayList;
 /**
  *
  * @author DAM105
@@ -31,18 +33,19 @@ public VentanaAdmin(Modelo.Usuario usuario) {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnInventario = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Bienvenido Administrador");
 
-        jButton1.setText("Ver Inventario");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnInventario.setText("Ver Inventario");
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnInventarioActionPerformed(evt);
             }
         });
 
@@ -60,6 +63,13 @@ public VentanaAdmin(Modelo.Usuario usuario) {
             }
         });
 
+        jButton4.setText("ExportarCSV");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,36 +80,40 @@ public VentanaAdmin(Modelo.Usuario usuario) {
                         .addGap(120, 120, 120)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3)
-                            .addComponent(jButton1))))
-                .addContainerGap(142, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(131, 131, 131))
+                        .addGap(138, 138, 138)
+                        .addComponent(btnInventario))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jButton2)
+                        .addGap(26, 26, 26)
+                        .addComponent(jButton4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jButton3)))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jLabel1)
+                .addGap(24, 24, 24)
+                .addComponent(btnInventario)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton4))
+                .addGap(42, 42, 42)
                 .addComponent(jButton3)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-JOptionPane.showMessageDialog(this, "Módulo de inventario - próximamente");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+new tallerreto.tallerinformatica.VentanaInventario(usuario).setVisible(true);
+    }//GEN-LAST:event_btnInventarioActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Servicio.InformeServicio informe = new Servicio.InformeServicio();
@@ -111,6 +125,27 @@ JOptionPane.showMessageDialog(this, "Informe generado correctamente");
          new tallerreto.tallerinformatica.LoginForm().setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        List<Modelo.Material> lista = new Dao.MaterialDAO().obtenerMateriales();
+StringBuilder sb = new StringBuilder();
+sb.append("Nombre,Categoría,Ubicación,Cantidad,Estado\n");
+for (Modelo.Material m : lista) {
+    sb.append(m.getNombre()).append(",")
+      .append(m.getCategoria()).append(",")
+      .append(m.getUbicacion()).append(",")
+      .append(m.getCantidad()).append(",")
+      .append(m.getEstado()).append("\n");
+}
+try {
+    java.io.FileWriter fw = new java.io.FileWriter("inventario.csv");
+    fw.write(sb.toString());
+    fw.close();
+    JOptionPane.showMessageDialog(this, "CSV exportado correctamente como 'inventario.csv'");
+} catch (java.io.IOException e) {
+    JOptionPane.showMessageDialog(this, "Error al exportar: " + e.getMessage());
+}
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,9 +183,10 @@ this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnInventario;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

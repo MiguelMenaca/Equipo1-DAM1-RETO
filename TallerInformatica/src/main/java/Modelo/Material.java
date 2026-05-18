@@ -9,14 +9,16 @@ package Modelo;
  * @author DAM105
  */
 public class Material {
+    private int id;
     private String nombre;
     private String categoria;
     private String ubicacion;
     private int cantidad;
     private String estado;
 
-    public Material(String nombre, String categoria, String ubicacion,
-            int cantidad, String estado) {
+    public Material(int id, String nombre, String categoria, String ubicacion,
+                    int cantidad, String estado) {
+        this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
         this.ubicacion = ubicacion;
@@ -24,6 +26,7 @@ public class Material {
         this.estado = estado;
     }
 
+    public int getId() { return id; }
     public String getNombre() { return nombre; }
     public String getCategoria() { return categoria; }
     public String getUbicacion() { return ubicacion; }
