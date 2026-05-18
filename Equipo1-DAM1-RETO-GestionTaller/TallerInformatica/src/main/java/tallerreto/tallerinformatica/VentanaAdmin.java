@@ -36,6 +36,7 @@ public VentanaAdmin(Modelo.Usuario usuario) {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
         jLabel1.setText("Bienvenido Administrador");
 
