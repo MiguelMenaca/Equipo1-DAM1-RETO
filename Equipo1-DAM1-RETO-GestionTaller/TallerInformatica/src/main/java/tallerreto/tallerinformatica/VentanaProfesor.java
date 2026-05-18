@@ -67,9 +67,9 @@ public VentanaProfesor(Modelo.Usuario usuario) {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel1)
-                .addGap(34, 34, 34)
+                .addGap(78, 78, 78)
                 .addComponent(jButton1)
                 .addGap(44, 44, 44)
                 .addComponent(jButton2)
