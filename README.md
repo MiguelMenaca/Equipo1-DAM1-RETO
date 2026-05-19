@@ -180,7 +180,7 @@ Estado:  ✅ Completado
 
 
 ## Guía de despliegue
-[📄 Guía de despliegue PDF](docs/guia-despliegue.pdf)
+[GUIA DE DISPLEGUE equipo 1.docx](https://github.com/user-attachments/files/28026132/GUIA.DE.DISPLEGUE.equipo.1.docx)
 
 ## Manual de usuario
 [M-U Equipo 1.docx](https://github.com/user-attachments/files/28020907/M-U.Equipo.1.docx)
