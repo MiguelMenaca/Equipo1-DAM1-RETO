@@ -117,9 +117,8 @@ Permite representar las funcionalidades disponibles para cada perfil:
 
 # Diagrama de Clases
 
-Representación de la estructura orientada a objetos de la aplicación Java.
+Representación de la estructura orientada a objetos de la aplicación Java
 
-![Diagrama de Clases](img/diagrama-clases.png)
 
 ---
 
