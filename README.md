@@ -175,7 +175,8 @@ Estado: 🟡 En desarrollo
 [📄 Guía de despliegue PDF](docs/guia-despliegue.pdf)
 
 ## Manual de usuario
-[📄 Manual de usuario PDF](docs/manual-usuario.pdf)
+[M-U Equipo 1.docx](https://github.com/user-attachments/files/28020907/M-U.Equipo.1.docx)
+
 
 ---
 
