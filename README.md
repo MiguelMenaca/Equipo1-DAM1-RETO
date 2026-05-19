@@ -159,7 +159,7 @@ Estado: ✅ Completado
 - Plano visual del taller
 - Estructura semántica
 
-Estado: 🟡 Falta Plano Taller
+Estado:  ✅ Completado
 
 ## Programación
 - Aplicación Java Swing
