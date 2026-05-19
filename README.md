@@ -191,8 +191,7 @@ Conocimiento al tener que usar las herramientas de varios Modulo
 ## Aspectos Negativos:
 - Configuración de AWS
 - Conexión remota MySQL
--Reparto de Trabajos
-
+- Reparto de Trabajos
 ---
 
 # Webgrafía
