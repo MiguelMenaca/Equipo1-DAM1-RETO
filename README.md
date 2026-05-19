@@ -45,14 +45,19 @@ Responsabilidades:
 - Programación
 - Entornos de Desarrollo
 - Documentación
+- -README
+- JavaDOC
+- Manual de Usuario
 
 ## Kiran IH
 Responsabilidades:
 - Sistemas Informáticos
+- Guia de Despliegue
 
 ## Miguel MC
 Responsabilidades:
 - Plano del taller de LMSGI
+- Documentar la Pagina Web de Visual
 ---
 
 # Tecnologías utilizadas
