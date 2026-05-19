@@ -125,14 +125,12 @@ Representación de la estructura orientada a objetos de la aplicación Java.
 - Modelo relacional funcional
 - Scripts SQL
 - Sitio web HTML/CSS prácticamente completo
-- Documentación Markdown
 - Repositorio GitHub estructurado
-
+- Aplicación Java de escritorio
 ## En desarrollo
 - Sistemas Informáticos (AWS / servidores)
-- Aplicación Java de escritorio
 - Perfeccionamiento del plano visual del taller
-
+-Documentación
 ---
 
 # Resultados esperados por módulo
@@ -157,7 +155,7 @@ Estado: 🟡 Falta Plano Taller
 - Conexión a base de datos
 - CRUD
 
-Estado: 🟡 En desarrollo
+Estado:  ✅ Completado
 
 ## Sistemas Informáticos
 - AWS
@@ -165,11 +163,10 @@ Estado: 🟡 En desarrollo
 - MySQL remoto
 - Apache/Nginx
 
-Estado: 🟡 En desarrollo
+Estado:  ✅ Completado
 
 ---
 
-# Documentación adicional
 
 ## Guía de despliegue
 [📄 Guía de despliegue PDF](docs/guia-despliegue.pdf)
@@ -183,16 +180,13 @@ Estado: 🟡 En desarrollo
 # Valoración del proyecto
 
 ## Aspectos positivos:
-- 
+-Conocimiento al tener que usar las herramientas de varios Modulos
+-
 
 ## Aspectos Negativos:
 - Configuración de AWS
 - Conexión remota MySQL
-- Integración Java + base de datos
-
----
-
-# Mejoras futuras
+-Reparto de Trabajos
 
 ---
 
