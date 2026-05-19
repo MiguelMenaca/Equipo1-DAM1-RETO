@@ -8,13 +8,19 @@ import Modelo.Usuario;
 import java.sql.*;
 /**
  *
- * @author DAM105
+ * @author Sergio Iturbe Sánchez
  */
 public class UsuarioDAO {
 
    
  
-
+/**
+ * 
+ * @param nombre
+ * @param pass
+ * @return 
+ * @author Sergio Iturbe Sánchez
+ */
     public Usuario login(String nombre, String pass) {
         Usuario u = null;
         String sql = "SELECT * FROM Usuarios WHERE nombre = ? AND password = ?";

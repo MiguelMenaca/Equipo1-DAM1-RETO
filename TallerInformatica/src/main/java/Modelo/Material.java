@@ -6,7 +6,7 @@ package Modelo;
 
 /**
  *
- * @author DAM105
+ * @author Sergio Iturbe Sánchez
  */
 public class Material {
     private int id;
@@ -15,7 +15,16 @@ public class Material {
     private String ubicacion;
     private int cantidad;
     private String estado;
-
+/**
+ * 
+ * @param id
+ * @param nombre
+ * @param categoria
+ * @param ubicacion
+ * @param cantidad
+ * @param estado 
+ * @author Sergio Iturbe Sánchez
+ */
     public Material(int id, String nombre, String categoria, String ubicacion,
                     int cantidad, String estado) {
         this.id = id;
@@ -25,7 +34,11 @@ public class Material {
         this.cantidad = cantidad;
         this.estado = estado;
     }
-
+/**
+ * 
+ * @return 
+ * @author Sergio Iturbe Sánchez
+ */
     public int getId() { return id; }
     public String getNombre() { return nombre; }
     public String getCategoria() { return categoria; }

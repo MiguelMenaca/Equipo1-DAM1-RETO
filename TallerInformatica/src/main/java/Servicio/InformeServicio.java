@@ -12,10 +12,14 @@ import java.util.List;
 
 /**
  *
- * @author DAM105
+ * @author Sergio Iturbe Sánchez
  */
 public class InformeServicio {
 
+    /**
+     * 
+     * @author Sergio Iturbe Sánchez
+     */
     public void generarInforme() {
         MaterialDAO dao = new MaterialDAO();
         List<Material> materiales = dao.obtenerMateriales();

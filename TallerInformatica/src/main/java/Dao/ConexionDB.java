@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 /**
  *
- * @author DAM105
+ * @author Sergio Iturbe Sánchez
  */
 public class ConexionDB {
 

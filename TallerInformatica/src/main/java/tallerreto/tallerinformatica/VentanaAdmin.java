@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 /**
  *
- * @author DAM105
+ * @author Sergio Iturbe Sánchez
  */
 public class VentanaAdmin extends javax.swing.JFrame {
 

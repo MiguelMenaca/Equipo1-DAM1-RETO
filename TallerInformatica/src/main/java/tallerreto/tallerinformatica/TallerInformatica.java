@@ -7,7 +7,7 @@ import Servicio.InformeServicio;
 
 /**
  *
- * @author DAM105
+ * @author Sergio Iturbe Sánchez
  */
 public class TallerInformatica {
 //Main para que se Ejecute desde el Login

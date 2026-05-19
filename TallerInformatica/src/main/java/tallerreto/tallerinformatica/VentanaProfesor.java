@@ -7,7 +7,7 @@ package tallerreto.tallerinformatica;
 import javax.swing.JOptionPane;
 /**
  *
- * @author DAM105
+ * @author Sergio Iturbe Sánchez
  */
 public class VentanaProfesor extends javax.swing.JFrame {
 
