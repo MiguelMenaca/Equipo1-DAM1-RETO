@@ -185,8 +185,8 @@ Estado:  ✅ Completado
 # Valoración del proyecto
 
 ## Aspectos positivos:
--Conocimiento al tener que usar las herramientas de varios Modulos
--
+Conocimiento al tener que usar las herramientas de varios Modulo
+
 
 ## Aspectos Negativos:
 - Configuración de AWS
