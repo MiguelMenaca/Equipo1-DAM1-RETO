@@ -59,7 +59,14 @@ Responsabilidades:
 - Plano del taller de LMSGI
 - Documentar la Pagina Web de Visual
 ---
+# Guia del Reto Editada por Trabajo Realizado
+-Color Rosa: Sergio Iturbe Sánchez
+-Color Azul: Kiran IQBAL HUSSAIN
+-Color Verde: Miguel Meñaca Cuevas
+-Color Amarillo: No Relevante
 
+[DAM-02--guia-alumnos_reto_Gestion_Taller (3).pdf](https://github.com/user-attachments/files/28024191/DAM-02--guia-alumnos_reto_Gestion_Taller.3.pdf)
+---
 # Tecnologías utilizadas
 
 - Java
