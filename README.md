@@ -182,10 +182,10 @@ Estado: 🟡 En desarrollo
 
 # Valoración del proyecto
 
-Aspectos positivos:
+## Aspectos positivos:
 - 
 
-Dificultades:
+## Aspectos Negativos:
 - Configuración de AWS
 - Conexión remota MySQL
 - Integración Java + base de datos
