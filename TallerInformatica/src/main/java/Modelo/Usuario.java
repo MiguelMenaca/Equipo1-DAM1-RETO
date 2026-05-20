@@ -15,8 +15,8 @@ public class Usuario {
     private String rol;
 
     /**
-     * 
-     * @param id
+     * Este Constructor inicializa los Atributos del Usuario
+     * @param id "Identificador del Usuario"
      * @param nombre
      * @param email
      * @param rol 
@@ -29,7 +29,7 @@ public class Usuario {
         this.rol = rol;
     }
 /**
- * 
+ * Getters para obtener los Atributos del Usuario
  * @return 
  * @author Sergio Iturbe Sánchez
  */

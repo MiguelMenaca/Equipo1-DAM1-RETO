@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import java.util.List;
 import java.util.ArrayList;
 /**
- *
+ *La Ventana Admin se centra en dejar que el Admin entre al Inventario, Genere Informes de 2 tipos y cerrar la sesion
  * @author Sergio Iturbe Sánchez
  */
 public class VentanaAdmin extends javax.swing.JFrame {
@@ -17,7 +17,11 @@ public class VentanaAdmin extends javax.swing.JFrame {
      * Creates new form VentanaAdmin
      */
     private Modelo.Usuario usuario;
-
+/**
+ * Este constructor almacena el Usuario Admin e inicia el componente grafico
+ * @param usuario
+ * @author Sergio Iturbe Sánchez
+ */
 public VentanaAdmin(Modelo.Usuario usuario) {
     this.usuario = usuario;
     initComponents();
@@ -110,22 +114,38 @@ public VentanaAdmin(Modelo.Usuario usuario) {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * Este Boton abre la gestion del Inventario
+ * @param evt 
+ * @author Sergio Iturbe Sánchez
+ */
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
 new tallerreto.tallerinformatica.VentanaInventario(usuario).setVisible(true);
     }//GEN-LAST:event_btnInventarioActionPerformed
-
+/**
+ * Este boton genera un Informe en formato de texto
+ * @param evt 
+ * @author Sergio Iturbe Sánchez
+ */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Servicio.InformeServicio informe = new Servicio.InformeServicio();
 informe.generarInforme();
 JOptionPane.showMessageDialog(this, "Informe generado correctamente");
     }//GEN-LAST:event_jButton2ActionPerformed
-
+/**
+ * Este boton permite al Admin cerrar la Sesion
+ * @param evt
+ * @author Sergio Iturbe Sánchez
+ */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
          new tallerreto.tallerinformatica.LoginForm().setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
-
+/**
+ * Este boton permite generar un informe pero en CSV
+ * @param evt 
+ * @author Sergio Iturbe Sánchez
+ */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         List<Modelo.Material> lista = new Dao.MaterialDAO().obtenerMateriales();
 StringBuilder sb = new StringBuilder();
@@ -148,7 +168,9 @@ try {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
+     * Lanza la ventana de Login
      * @param args the command line arguments
+     * @author Sergio Iturbe Sánchez
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

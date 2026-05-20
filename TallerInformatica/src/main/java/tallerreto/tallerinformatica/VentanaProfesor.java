@@ -6,7 +6,8 @@ package tallerreto.tallerinformatica;
 
 import javax.swing.JOptionPane;
 /**
- *
+ *La VentanaProfesor visualiza al Usuario "Profesor" las opciones de Ver Inventario y Cerrar Sesion
+ * Al entrar en Ver Inventario, se abre pero el Profesor no puede Modificarlo
  * @author Sergio Iturbe Sánchez
  */
 public class VentanaProfesor extends javax.swing.JFrame {
@@ -15,7 +16,11 @@ public class VentanaProfesor extends javax.swing.JFrame {
      * Creates new form VentanaProfesor
      */
     private Modelo.Usuario usuario;
-
+/**
+ * Almacena el Usuario Profesor e inicia los componentes Graficos
+ * @param usuario 
+ * @author Sergio Iturbe Sánchez
+ */
 public VentanaProfesor(Modelo.Usuario usuario) {
     this.usuario = usuario;
     initComponents();
@@ -78,18 +83,28 @@ public VentanaProfesor(Modelo.Usuario usuario) {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * El boton Inventario abre el Inventario pero solo en "Lectura" para el Profesor, para Modificarlo como Eliminar o Añadir Materiales habra que iniciar Sesion con Admin
+ * @param evt
+ * @author Sergio Iturbe Sánchez
+ */
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
         new tallerreto.tallerinformatica.VentanaInventario(usuario).setVisible(true);
     }//GEN-LAST:event_btnInventarioActionPerformed
-
+/**
+ * Se cierra la Sesion de Profesor
+ * @param evt 
+ * @author Sergio Iturbe Sánchez
+ */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         new tallerreto.tallerinformatica.LoginForm().setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
+     * Se lanza el Login
      * @param args the command line arguments
+     * @author Sergio Iturbe Sánchez
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

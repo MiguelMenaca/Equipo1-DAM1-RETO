@@ -6,15 +6,20 @@ package tallerreto.tallerinformatica;
 import Servicio.InformeServicio;
 
 /**
- *
+ *Clase Main para lanzar la Ventana de Login
  * @author Sergio Iturbe Sánchez
  */
 public class TallerInformatica {
-//Main para que se Ejecute desde el Login
+/**
+ * Se lanza la ventana de Inicio de Sesion
+ * @param args
+ * @author Sergio Iturbe Sánchez
+ */
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginForm().setVisible(true);
+                LoginForm login = new LoginForm();
+                login.setVisible(true);
             }
         });
     }

@@ -11,13 +11,13 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- *
+ *Esta clase de Servicio es la encargada de generar Informes del Inventario de Materiales
  * @author Sergio Iturbe Sánchez
  */
 public class InformeServicio {
 
     /**
-     * 
+     * Genera el Informe del Inventario en "informe.txt"
      * @author Sergio Iturbe Sánchez
      */
     public void generarInforme() {
