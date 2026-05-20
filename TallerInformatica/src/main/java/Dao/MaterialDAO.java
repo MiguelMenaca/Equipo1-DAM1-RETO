@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ *Esta clase MATERIALDAO gestiona el acceso a los Datos de la tabla Material de la Base De Datos.
  * @author Sergio Iturbe Sánchez
  */
 public class MaterialDAO {
 /**
- * 
+ * Se obtienen los materiales registrados en la Base de datos
+ * Se realiza un JOIN con las Tablas "Categoria" y "Ubicacion" para obtener los nombres completos de ambas.
  * @return 
  * @author Sergio Iturbe Sánchez
  */
@@ -55,11 +56,11 @@ public class MaterialDAO {
         return lista;
     }
 /**
- * 
+ * Sirve para Introducir un nuevo material en la Base.
  * @param nombre
  * @param descripcion
  * @param cantidad
- * @param estado
+ * @param estado "Disponible-prestado-reparacion-Baja"
  * @param idCategoria
  * @param idUbicacion 
  * @author Sergio Iturbe Sánchez
@@ -81,7 +82,7 @@ public class MaterialDAO {
         }
     }
 /**
- * 
+ * Con su ID, sirve para eliminar el Material
  * @param id 
  * @author Sergio Iturbe Sánchez
  */
@@ -97,7 +98,7 @@ public class MaterialDAO {
         }
     }
 /**
- * 
+ * Actualiza los datos de un Material existente en la Base de Datos
  * @param id
  * @param nombre
  * @param cantidad

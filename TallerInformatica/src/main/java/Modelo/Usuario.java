@@ -5,7 +5,7 @@
 package Modelo;
 
 /**
- *
+ *Esta clase representa un Usuario de la App junto a sus atributos
  * @author Sergio Iturbe Sánchez
  */
 public class Usuario {

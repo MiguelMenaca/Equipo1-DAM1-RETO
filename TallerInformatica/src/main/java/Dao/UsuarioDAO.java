@@ -7,7 +7,7 @@ package Dao;
 import Modelo.Usuario;
 import java.sql.*;
 /**
- *
+ *Clase DAO para gestionar el acceso a los datos de "Usuario", Permitiendo autenticar usuarios y obtener el perfil de Admin o Profesor
  * @author Sergio Iturbe Sánchez
  */
 public class UsuarioDAO {
@@ -15,10 +15,10 @@ public class UsuarioDAO {
    
  
 /**
- * 
+ * Se compruban las credenciales de Usuario en la Base de Datos
  * @param nombre
  * @param pass
- * @return 
+ * @return "Usuario si las credenciales estan bien, si no lo son Null"
  * @author Sergio Iturbe Sánchez
  */
     public Usuario login(String nombre, String pass) {

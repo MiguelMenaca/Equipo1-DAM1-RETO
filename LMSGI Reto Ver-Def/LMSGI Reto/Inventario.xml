@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taller>
+    <material>
+        <id>1</id>
+        <nombre>Router Cisco 2901</nombre>
+        <descripcion>Router de servicios integrados para redes de datos.</descripcion>
+        <cantidad>2</cantidad>
+        <stock_minimo>3</stock_minimo>
+        <estado>disponible</estado>
+        <categoria>Redes</categoria>
+        <ubicacion>Armario A - Balda 1</ubicacion>
+    </material>
+    <material>
+        <id>2</id>
+        <nombre>SSD Samsung 1TB</nombre>
+        <descripcion>Unidad de estado sólido de alto rendimiento.</descripcion>
+        <cantidad>15</cantidad>
+        <stock_minimo>5</stock_minimo>
+        <estado>prestado</estado>
+        <categoria>Hardware</categoria>
+        <ubicacion>Armario B - Balda 2</ubicacion>
+    </material>
+</taller>

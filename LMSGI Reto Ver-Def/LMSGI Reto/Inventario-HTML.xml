@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+<html>
+<head>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #1f4e79; color: white; padding: 10px; }
+        td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .alerta-stock { background-color: #ffcccc; color: #cc0000; font-weight: bold; }
+        h1 { color: #1f4e79; }
+    </style>
+</head>
+<body>
+    <h1>Informe de Inventario - Taller</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Stock Mínimo</th>
+            <th>Estado</th>
+            <th>Ubicación</th>
+        </tr>
+        <xsl:for-each select="taller/material">
+        <tr>
+            <xsl:if test="cantidad &lt; stock_minimo">
+                <xsl:attribute name="class">alerta-stock</xsl:attribute>
+            </xsl:if>
+            <td><xsl:value-of select="id"/></td>
+            <td><xsl:value-of select="nombre"/></td>
+            <td><xsl:value-of select="cantidad"/></td>
+            <td><xsl:value-of select="stock_minimo"/></td>
+            <td><xsl:value-of select="estado"/></td>
+            <td><xsl:value-of select="ubicacion"/></td>
+        </tr>
+        </xsl:for-each>
+    </table>
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>

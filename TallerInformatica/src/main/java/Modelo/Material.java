@@ -5,7 +5,7 @@
 package Modelo;
 
 /**
- *
+ *Esta clase representa a un Material del Inventario con sus atributos
  * @author Sergio Iturbe Sánchez
  */
 public class Material {
@@ -16,10 +16,10 @@ public class Material {
     private int cantidad;
     private String estado;
 /**
- * 
- * @param id
- * @param nombre
- * @param categoria
+ * Este Constructor inicializa todos los Atributos del Material
+ * @param id "Identificador del Material"
+ * @param nombre 
+ * @param categoria 
  * @param ubicacion
  * @param cantidad
  * @param estado 
@@ -35,7 +35,7 @@ public class Material {
         this.estado = estado;
     }
 /**
- * 
+ * Getters para obtener los atributos del Material que sea
  * @return 
  * @author Sergio Iturbe Sánchez
  */
