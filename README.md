@@ -126,6 +126,8 @@ Permite representar las funcionalidades disponibles para cada perfil:
 
 Representación de la estructura orientada a objetos de la aplicación Java
 
+<img width="1420" height="789" alt="image" src="https://github.com/user-attachments/assets/d45a4b39-ad37-4ba0-9381-b84c041f65fc" />
+
 
 ---
 
