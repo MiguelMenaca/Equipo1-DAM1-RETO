@@ -140,10 +140,10 @@ Representación de la estructura orientada a objetos de la aplicación Java
 - Sitio web HTML/CSS prácticamente completo
 - Repositorio GitHub estructurado
 - Aplicación Java de escritorio
-## En desarrollo
 - Sistemas Informáticos (AWS / servidores)
 - Perfeccionamiento del plano visual del taller
--Documentación
+## En desarrollo
+
 ---
 
 # Resultados esperados por módulo
@@ -193,12 +193,12 @@ Estado:  ✅ Completado
 # Valoración del proyecto
 
 ## Aspectos positivos:
+
 Conocimiento al tener que usar las herramientas de varios Modulo
 
 
 ## Aspectos Negativos:
-- Configuración de AWS
-- Conexión remota MySQL
+
 - Reparto de Trabajos
 ---
 
