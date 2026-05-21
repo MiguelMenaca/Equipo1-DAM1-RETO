@@ -65,7 +65,8 @@ Responsabilidades:
 -Color Verde: Miguel Meñaca Cuevas
 -Color Amarillo: No Relevante
 
-[DAM-02--guia-alumnos_reto_Gestion_Taller (3).pdf](https://github.com/user-attachments/files/28024191/DAM-02--guia-alumnos_reto_Gestion_Taller.3.pdf)
+[Guia-alumnos_reto_Gestion_Taller_Versi_Definitiva.pdf](https://github.com/user-attachments/files/28109705/Guia-alumnos_reto_Gestion_Taller_Versi_Definitiva.pdf)
+
 ---
 # Tecnologías utilizadas
 
