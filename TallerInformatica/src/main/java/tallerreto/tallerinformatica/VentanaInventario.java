@@ -5,8 +5,10 @@
 package tallerreto.tallerinformatica;
 
 /**
- *
- * @author DAM105
+ *La VentanaInventario es la gestion de Materiales
+ * Permite ver-Buscar-Editar-Eliminar o Volver
+ * Si estas con la Cuenta Profesor no podras usar las opciones de Modificación
+ * @author Sergio Iturbe Sánchez
  */
 public class VentanaInventario extends javax.swing.JFrame {
 
@@ -14,7 +16,11 @@ public class VentanaInventario extends javax.swing.JFrame {
      * Creates new form VentanaInventario
      */
    private Modelo.Usuario usuario;
-
+/**
+ * Constructor de la VentanaInventario, Se inician los Componentes, carga la tabla... y si es Profesor se bloquean las opciones de modificacion
+ * @param usuario 
+ * @author Sergio Iturbe Sánchez
+ */
 public VentanaInventario(Modelo.Usuario usuario) {
     this.usuario = usuario;
     initComponents();
@@ -27,7 +33,10 @@ public VentanaInventario(Modelo.Usuario usuario) {
         btnEliminar.setVisible(false);
     }
 }
-
+/**
+ * Aqui se obtiene de la Base de Datos y se rellena en las columnas los datos
+ * @author Sergio Iturbe Sánchez
+ */
 private void cargarTabla() {
     String[] columnas = {"ID", "Nombre", "Categoría", "Ubicación", "Cantidad", "Estado"};
     javax.swing.table.DefaultTableModel modelo = new javax.swing.table.DefaultTableModel(columnas, 0);
@@ -82,10 +91,10 @@ private void cargarTabla() {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 10;
+        gridBagConstraints.gridwidth = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 367;
-        gridBagConstraints.ipady = 221;
+        gridBagConstraints.ipadx = 413;
+        gridBagConstraints.ipady = 478;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
@@ -100,8 +109,9 @@ private void cargarTabla() {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 23;
+        gridBagConstraints.ipadx = 58;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(45, 14, 0, 0);
         getContentPane().add(txtBuscar, gridBagConstraints);
@@ -121,12 +131,11 @@ private void cargarTabla() {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(45, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(45, 18, 0, 0);
         getContentPane().add(btnBuscar, gridBagConstraints);
 
         btnAñadir.setText("Añadir");
@@ -152,7 +161,6 @@ private void cargarTabla() {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(12, 53, 10, 0);
         getContentPane().add(btnEditar, gridBagConstraints);
@@ -164,11 +172,11 @@ private void cargarTabla() {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 29, 10, 0);
+        gridBagConstraints.insets = new java.awt.Insets(12, 18, 10, 0);
         getContentPane().add(btnEliminar, gridBagConstraints);
 
         btnVolver.setText("Volver");
@@ -178,19 +186,27 @@ private void cargarTabla() {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 9;
+        gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 12, 10, 136);
+        gridBagConstraints.insets = new java.awt.Insets(12, 12, 10, 0);
         getContentPane().add(btnVolver, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * Texto de "Buscar" que acompaña al Buscador del Inventario
+ * @param evt
+ * @author Sergio Iturbe Sánchez
+ */
     private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarActionPerformed
-
+/**
+ * Aqui se filtra el Inventario segun palabras clave del Buscador por ejemplo "Router"
+ * @param evt 
+ * @author Sergio Iturbe Sánchez
+ */
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         String busqueda = txtBuscar.getText().toLowerCase();
 javax.swing.table.DefaultTableModel modelo = (javax.swing.table.DefaultTableModel) tablaInventario.getModel();
@@ -207,7 +223,12 @@ for (Modelo.Material m : materiales) {
     }
 }
     }//GEN-LAST:event_btnBuscarActionPerformed
-
+/**
+ * Este Boton permite al Admin añadir un nuevo material al Inventario
+ * Se presentan varias opciones como Descripcion-Cantidad-Estados-Su ID de categoria y Ubicacion...
+ * @param evt 
+ * @author Sergio Iturbe Sánchez
+ */
     private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
         String nombre = javax.swing.JOptionPane.showInputDialog(this, "Nombre del material:");
 if (nombre == null || nombre.isEmpty()) return;
@@ -229,7 +250,11 @@ try {
     javax.swing.JOptionPane.showMessageDialog(this, "Error al añadir: " + ex.getMessage());
 }
     }//GEN-LAST:event_btnAñadirActionPerformed
-
+/**
+ * Este otro boton permite Elimiar un Material del Inventario, hay que selecionar una fila, si no te muestra un aviso
+ * @param evt 
+ * @author Sergio Iturbe Sánchez
+ */
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int fila = tablaInventario.getSelectedRow();
 if (fila == -1) {
@@ -247,11 +272,19 @@ if (confirm == javax.swing.JOptionPane.YES_OPTION) {
     cargarTabla();
 }
     }//GEN-LAST:event_btnEliminarActionPerformed
-
+/**
+ * Este boton simplemente permite volver a la anterior ventana
+ * @param evt 
+ * @author Sergio Iturbe Sánchez
+ */
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
-
+/**
+ * Este boton te deja Editar un material existente en el Inventario preguntandote por las Nuevas Opciones de Modificacion
+ * @param evt 
+ * @author Sergio Iturbe Sánchez
+ */
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         int fila = tablaInventario.getSelectedRow();
 if (fila == -1) {
@@ -280,7 +313,9 @@ try {
     }//GEN-LAST:event_btnEditarActionPerformed
     }
     /**
+     *Lanza la ventana de Login 
      * @param args the command line arguments
+     * @author Sergio Iturbe Sánchez
      */
     public static  void main(String args[]) {
         /* Set the Nimbus look and feel */

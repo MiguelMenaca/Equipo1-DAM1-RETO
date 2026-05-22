@@ -1,21 +1,9 @@
 === INVENTARIO ===
 
-Nombre: Router Cisco
-Categoria: Red
+Nombre: Multimetros
+Categoria: Herramientas
 Ubicacion: Armario A - Balda 1
-Cantidad: 5
-Estado: disponible
------------------
-Nombre: Switch 24 puertos
-Categoria: Red
-Ubicacion: Armario A - Balda 2
-Cantidad: 3
-Estado: disponible
------------------
-Nombre: Placa base ATX
-Categoria: Hardware
-Ubicacion: Armario B - Balda 1
-Cantidad: 2
+Cantidad: 10
 Estado: prestado
 -----------------
 Nombre: Destornillador estrella
@@ -23,4 +11,40 @@ Categoria: Herramientas
 Ubicacion: Armario A - Balda 1
 Cantidad: 8
 Estado: disponible
+-----------------
+Nombre: Router Cisco
+Categoria: Red
+Ubicacion: Armario A - Balda 1
+Cantidad: 5
+Estado: disponible
+-----------------
+Nombre: Tarjetas Graficas
+Categoria: Hardware
+Ubicacion: Armario A - Balda 2
+Cantidad: 6
+Estado: prestado
+-----------------
+Nombre: Discos SSD-WCa
+Categoria: Red
+Ubicacion: Armario A - Balda 2
+Cantidad: 4
+Estado: reparacion
+-----------------
+Nombre: Switch 24 puertos
+Categoria: Red
+Ubicacion: Armario A - Balda 2
+Cantidad: 3
+Estado: disponible
+-----------------
+Nombre: Destornilladores de Precision
+Categoria: Herramientas
+Ubicacion: Armario B - Balda 1
+Cantidad: 6
+Estado: disponible
+-----------------
+Nombre: Placa base ATX
+Categoria: Hardware
+Ubicacion: Armario B - Balda 1
+Cantidad: 2
+Estado: prestado
 -----------------
