@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Taller Informática</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+
+<header>
+    <h1>Taller de Informática</h1>
+    <p>IES Miguel Herrero Pereda</p>
+</header>
+
+<nav>
+    <a href="#plano">Plano</a>
+    <a href="#inventario">Inventario</a>
+    <a href="#informes">Informes</a>
+    <a href="plano-taller.html">Taller</a>
+</nav>
+
+<main>
+    <section id="plano">
+<style>
+ 
+  /* ── RESET & BASE ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+  :root {
+    --white:    #FFFFFF;
+    --blue-50:  #E6F1FB;
+    --blue-100: #B5D4F4;
+    --blue-200: #85B7EB;
+    --blue-600: #185FA5;
+    --blue-800: #0C447C;
+    --blue-900: #042C53;
+    --green-50:  #EAF3DE;
+    --green-600: #3B6D11;
+    --green-800: #27500A;
+    --gray-50:  #F1EFE8;
+    --gray-100: #D3D1C7;
+    --gray-200: #B4B2A9;
+    --gray-400: #888780;
+    --gray-600: #5F5E5A;
+    --gray-800: #444441;
+    --bg:       #F7F8FA;
+    --surface:  #FFFFFF;
+    --border:   rgba(0,0,0,0.10);
+    --border-md:rgba(0,0,0,0.18);
+    --text:     #1A1A1A;
+    --text-muted: #6B6B68;
+    --text-hint:  #9A9A96;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --font: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
+  }
+ 
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 32px 24px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+ 
+  /* ── CABECERA ── */
+  header {
+    width: 100%;
+    max-width: 960px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+ 
+  .header-left h1 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color:var(--white);
+  }
+ 
+  .header-left p {
+    font-size: 13px;
+    color:var(--white);
+    margin-top: 3px;
+    font-family: var(--mono);
+  }
+ 
+  .header-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-800);
+    background: var(--blue-50);
+    border: 1px solid var(--blue-100);
+    border-radius: 20px;
+    padding: 5px 12px;
+  }
+ 
+  .header-badge svg { width: 14px; height: 14px; }
+ 
+  /* ── LEYENDA ── */
+  .leyenda {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+ 
+  .leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--white);
+  }
+ 
+  .leyenda-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+ 
+  .leyenda-dot.arm { background: var(--blue-600); }
+  .leyenda-dot.bld { background: var(--green-600); }
+ 
+  /* ── GRID PRINCIPAL ── */
+  .taller {
+    width: 100%;
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: 180px 1fr 180px;
+    gap: 8px;
+  }
+ 
+  /* ── COLUMNA LATERAL ── */
+  .col-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+ 
+  /* ── COLUMNA CENTRAL ── */
+  .col-center {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+ 
+  .center-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+ 
+  .center-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+ 
+  /* ── BLOQUE ARMARIO (header + baldas internas) ── */
+  .armario-block { display: flex; flex-direction: column; }
+ 
+  /* ── ELEMENTO BASE ── */
+  .elem {
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px 8px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, transform 0.12s ease;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    user-select: none;
+  }
+ 
+  .elem:hover {
+    border-color: var(--border-md);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+ 
+  .elem:active { transform: translateY(0); }
+ 
+  .elem.active {
+    border-color: var(--blue-600) !important;
+    background: var(--blue-50) !important;
+    box-shadow: 0 0 0 3px rgba(24,95,165,0.12), var(--shadow-md);
+  }
+ 
+  .elem.active .elem-label { color: var(--blue-800); }
+  .elem.active .elem-sub   { color: var(--blue-600); }
+  .elem.active .elem-icon  { color: var(--blue-600); }
+ 
+  /* ── ARMARIO HEADER (se une con baldas internas) ── */
+  .arm-header {
+    border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+    border-bottom: none !important;
+  }
+ 
+  .arm-header.active {
+    border-bottom: none !important;
+  }
+ 
+  /* ── ICONO ── */
+  .elem-icon {
+    font-size: 28px;
+    color: var(--text-muted);
+    line-height: 1;
+  }
+ 
+  .elem-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: center;
+  }
+ 
+  .elem-sub {
+    font-size: 10px;
+    color: var(--text-hint);
+    font-family: var(--mono);
+    text-align: center;
+  }
+ 
+  /* ── INDICADOR DE TIPO ── */
+  .type-pill {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 10px;
+  }
+ 
+  .type-pill.arm {
+    background: var(--blue-50);
+    color: var(--blue-800);
+    border: 1px solid var(--blue-100);
+  }
+ 
+  .type-pill.bld {
+    background: var(--green-50);
+    color: var(--green-800);
+    border: 1px solid #C0DD97;
+  }
+ 
+  /* ── BALDAS EXTERNAS ── */
+  .is-balda { min-height: 72px; }
+ 
+  /* ── ARMARIO CUERPO ── */
+  .is-armario { min-height: 96px; }
+ 
+  /* ── BALDAS INTERNAS ── */
+  .inner-baldas {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: #F0F2F5;
+    border: 1.5px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    padding: 4px 5px 5px;
+  }
+ 
+  .inner-balda {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 9px;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    background: var(--surface);
+    cursor: pointer;
+    transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
+  }
+ 
+  .inner-balda:hover {
+    background: #fff;
+    border-color: var(--border-md);
+    box-shadow: var(--shadow-sm);
+  }
+ 
+  .inner-balda.active {
+    background: var(--blue-50);
+    border-color: var(--blue-600);
+  }
+ 
+  .inner-balda.active .ib-label { color: var(--blue-800); }
+  .inner-balda.active .ib-icon  { color: var(--blue-600); }
+ 
+  .ib-icon {
+    font-size: 14px;
+    color: var(--text-hint);
+    flex-shrink: 0;
+  }
+ 
+  .ib-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    letter-spacing: 0.04em;
+    flex: 1;
+  }
+ 
+  .ib-pill {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1px 5px;
+    border-radius: 8px;
+    background: var(--green-50);
+    color: var(--green-800);
+    border: 1px solid #C0DD97;
+    letter-spacing: 0.06em;
+  }
+ 
+  /* ── PANEL INFO ── */
+  .panel-wrap {
+    width: 100%;
+    max-width: 960px;
+  }
+ 
+  .info-panel {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--border);
+    box-shadow: var(--shadow-md);
+    padding: 20px 24px;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    transition: border-color 0.2s;
+  }
+ 
+  .info-panel.has-data {
+    border-color: var(--blue-600);
+    box-shadow: 0 0 0 3px rgba(24,95,165,0.08), var(--shadow-md);
+  }
+ 
+  .info-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+ 
+  .info-tipo {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 12px;
+  }
+ 
+  .info-tipo.arm {
+    background: var(--blue-50);
+    color: var(--blue-800);
+    border: 1px solid var(--blue-100);
+  }
+ 
+  .info-tipo.bld {
+    background: var(--green-50);
+    color: var(--green-800);
+    border: 1px solid #C0DD97;
+  }
+ 
+  .info-nombre {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    font-family: var(--mono);
+  }
+ 
+  .info-contenido {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding-left: 2px;
+  }
+ 
+  .info-hint {
+    font-size: 13px;
+    color: var(--text-hint);
+    font-style: italic;
+  }
+ 
+  .info-breadcrumb {
+    font-size: 11px;
+    color: var(--text-hint);
+    font-family: var(--mono);
+    margin-top: 2px;
+  }
+ 
+  /* ── CONTADOR ── */
+  .stats-bar {
+    width: 100%;
+    max-width: 960px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+  }
+ 
+  .stat {
+    font-size: 11px;
+    color: var(--text-hint);
+    font-family: var(--mono);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+ 
+  .stat strong {
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+ 
+  /* ── DIVISOR COLUMNA CENTRAL ── */
+  .center-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+    display: none;
+  }
+ 
+</style>
+</head>
+<body>
+ 
+<!-- CABECERA -->
+<header>
+  <div class="header-left">
+    <h1>Plano del Taller</h1>
+    <p>taller-informatico / distribución de almacenamiento</p>
+  </div>
+  <div style="display:flex; flex-direction:column; align-items:flex-end; gap:10px;">
+    <div class="header-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+      </svg>
+      Interactivo
+    </div>
+    <div class="leyenda">
+      <div class="leyenda-item"><span class="leyenda-dot arm"></span>Armario</div>
+      <div class="leyenda-item"><span class="leyenda-dot bld"></span>Balda</div>
+    </div>
+  </div>
+</header>
+ 
+<!-- GRID TALLER -->
+<div class="taller">
+ 
+  <!-- COLUMNA IZQUIERDA -->
+  <div class="col-lateral">
+ 
+    <!-- Balda externa lateral izquierda -->
+    <div class="elem is-balda"
+         data-nombre="Balda A"
+         data-tipo="balda"
+         data-parent="—"
+         data-contenido="Ratones, teclados inalámbricos y memorias USB"
+         onclick="seleccionar(this)">
+      <span class="type-pill bld">Balda</span>
+      <div class="elem-icon">▤</div>
+      <span class="elem-label">Balda A</span>
+    </div>
+ 
+    <!-- Armario 1 + sus 3 baldas internas -->
+    <div class="armario-block">
+      <div class="elem is-armario arm-header"
+           data-nombre="Armario 1"
+           data-tipo="armario"
+           data-parent="—"
+           data-contenido="Placas base, fuentes de alimentación y cables HDMI"
+           onclick="seleccionar(this)">
+        <span class="type-pill arm">Armario</span>
+        <div class="elem-icon">▦</div>
+        <span class="elem-label">Armario 1</span>
+        <span class="elem-sub">lateral izquierdo</span>
+      </div>
+      <div class="inner-baldas">
+        <div class="inner-balda"
+             data-nombre="Balda A1"
+             data-tipo="balda"
+             data-parent="Armario 1"
+             data-contenido="Placas base ATX y micro-ATX de repuesto"
+             onclick="seleccionar(this)">
+          <span class="ib-icon">—</span>
+          <span class="ib-label">Balda A1</span>
+          <span class="ib-pill">Balda</span>
+        </div>
+        <div class="inner-balda"
+             data-nombre="Balda A2"
+             data-tipo="balda"
+             data-parent="Armario 1"
+             data-contenido="Fuentes de alimentación modulares 550W y 650W"
+             onclick="seleccionar(this)">
+          <span class="ib-icon">—</span>
+          <span class="ib-label">Balda A2</span>
+          <span class="ib-pill">Balda</span>
+        </div>
+        <div class="inner-balda"
+             data-nombre="Balda A3"
+             data-tipo="balda"
+             data-parent="Armario 1"
+             data-contenido="Cables HDMI, DisplayPort y adaptadores VGA"
+             onclick="seleccionar(this)">
+          <span class="ib-icon">—</span>
+          <span class="ib-label">Balda A3</span>
+          <span class="ib-pill">Balda</span>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+ 
+  <!-- COLUMNA CENTRAL -->
+  <div class="col-center">
+ 
+    <!-- Fila superior: 2 baldas externas sobre cada armario central -->
+    <div class="center-top">
+      <div class="elem is-balda"
+           data-nombre="Balda B"
+           data-tipo="balda"
+           data-parent="—"
+           data-contenido="Discos duros SSD 2.5&quot; y unidades M.2 NVMe"
+           onclick="seleccionar(this)">
+        <span class="type-pill bld">Balda</span>
+        <div class="elem-icon">▤</div>
+        <span class="elem-label">Balda B</span>
+      </div>
+      <div class="elem is-balda"
+           data-nombre="Balda C"
+           data-tipo="balda"
+           data-parent="—"
+           data-contenido="Tarjetas gráficas y tarjetas de red PCI-E"
+           onclick="seleccionar(this)">
+        <span class="type-pill bld">Balda</span>
+        <div class="elem-icon">▤</div>
+        <span class="elem-label">Balda C</span>
+      </div>
+    </div>
+ 
+    <!-- Fila inferior: Armario 2 y Armario 3 con sus baldas internas -->
+    <div class="center-bottom">
+ 
+      <!-- Armario 2 -->
+      <div class="armario-block">
+        <div class="elem is-armario arm-header"
+             data-nombre="Armario 2"
+             data-tipo="armario"
+             data-parent="—"
+             data-contenido="Portátiles antiguos, routers y switches de red"
+             onclick="seleccionar(this)">
+          <span class="type-pill arm">Armario</span>
+          <div class="elem-icon">▦</div>
+          <span class="elem-label">Armario 2</span>
+          <span class="elem-sub">centro izquierdo</span>
+        </div>
+        <div class="inner-baldas">
+          <div class="inner-balda"
+               data-nombre="Balda B1"
+               data-tipo="balda"
+               data-parent="Armario 2"
+               data-contenido="Portátiles sin batería y con pantalla dañada"
+               onclick="seleccionar(this)">
+            <span class="ib-icon">—</span>
+            <span class="ib-label">Balda B1</span>
+            <span class="ib-pill">Balda</span>
+          </div>
+          <div class="inner-balda"
+               data-nombre="Balda B2"
+               data-tipo="balda"
+               data-parent="Armario 2"
+               data-contenido="Routers WiFi y switches Ethernet gestionados"
+               onclick="seleccionar(this)">
+            <span class="ib-icon">—</span>
+            <span class="ib-label">Balda B2</span>
+            <span class="ib-pill">Balda</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Armario 3 -->
+      <div class="armario-block">
+        <div class="elem is-armario arm-header"
+             data-nombre="Armario 3"
+             data-tipo="armario"
+             data-parent="—"
+             data-contenido="Monitores, teclados mecánicos y baterías externas"
+             onclick="seleccionar(this)">
+          <span class="type-pill arm">Armario</span>
+          <div class="elem-icon">▦</div>
+          <span class="elem-label">Armario 3</span>
+          <span class="elem-sub">centro derecho</span>
+        </div>
+        <div class="inner-baldas">
+          <div class="inner-balda"
+               data-nombre="Balda C1"
+               data-tipo="balda"
+               data-parent="Armario 3"
+               data-contenido="Monitores 24&quot; y 27&quot; Full HD y 4K"
+               onclick="seleccionar(this)">
+            <span class="ib-icon">—</span>
+            <span class="ib-label">Balda C1</span>
+            <span class="ib-pill">Balda</span>
+          </div>
+          <div class="inner-balda"
+               data-nombre="Balda C2"
+               data-tipo="balda"
+               data-parent="Armario 3"
+               data-contenido="Teclados mecánicos Cherry MX y baterías externas"
+               onclick="seleccionar(this)">
+            <span class="ib-icon">—</span>
+            <span class="ib-label">Balda C2</span>
+            <span class="ib-pill">Balda</span>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+ 
+  </div>
+ 
+  <!-- COLUMNA DERECHA -->
+  <div class="col-lateral">
+ 
+    <!-- Balda externa lateral derecha -->
+    <div class="elem is-balda"
+         data-nombre="Balda D"
+         data-tipo="balda"
+         data-parent="—"
+         data-contenido="Adaptadores USB-C, cables de carga y hubs USB"
+         onclick="seleccionar(this)">
+      <span class="type-pill bld">Balda</span>
+      <div class="elem-icon">▤</div>
+      <span class="elem-label">Balda D</span>
+    </div>
+ 
+    <!-- Armario 4 + sus 3 baldas internas -->
+    <div class="armario-block">
+      <div class="elem is-armario arm-header"
+           data-nombre="Armario 4"
+           data-tipo="armario"
+           data-parent="—"
+           data-contenido="Impresoras, cartuchos de tinta y herramientas de taller"
+           onclick="seleccionar(this)">
+        <span class="type-pill arm">Armario</span>
+        <div class="elem-icon">▦</div>
+        <span class="elem-label">Armario 4</span>
+        <span class="elem-sub">lateral derecho</span>
+      </div>
+      <div class="inner-baldas">
+        <div class="inner-balda"
+             data-nombre="Balda D1"
+             data-tipo="balda"
+             data-parent="Armario 4"
+             data-contenido="Impresoras láser y de tinta para reparación"
+             onclick="seleccionar(this)">
+          <span class="ib-icon">—</span>
+          <span class="ib-label">Balda D1</span>
+          <span class="ib-pill">Balda</span>
+        </div>
+        <div class="inner-balda"
+             data-nombre="Balda D2"
+             data-tipo="balda"
+             data-parent="Armario 4"
+             data-contenido="Cartuchos de tóner y tinta de repuesto"
+             onclick="seleccionar(this)">
+          <span class="ib-icon">—</span>
+          <span class="ib-label">Balda D2</span>
+          <span class="ib-pill">Balda</span>
+        </div>
+        <div class="inner-balda"
+             data-nombre="Balda D3"
+             data-tipo="balda"
+             data-parent="Armario 4"
+             data-contenido="Destornilladores de precisión, pinzas y bridas"
+             onclick="seleccionar(this)">
+          <span class="ib-icon">—</span>
+          <span class="ib-label">Balda D3</span>
+          <span class="ib-pill">Balda</span>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+ 
+</div>
+ 
+<!-- BARRA DE ESTADÍSTICAS -->
+<div class="stats-bar">
+  <div class="stat"><strong>4</strong> armarios</div>
+  <div class="stat">·</div>
+  <div class="stat"><strong id="baldas-count">0</strong> baldas</div>
+  <div class="stat">·</div>
+  <div class="stat" id="seleccionado-stat">ningún elemento seleccionado</div>
+</div>
+ 
+<!-- PANEL DE INFORMACIÓN -->
+<div class="panel-wrap">
+  <div class="info-panel" id="info-panel">
+    <span class="info-hint">Haz clic sobre cualquier armario o balda para ver su contenido</span>
+  </div>
+</div>
+ 
+ 
+<script>
+ 
+  // ── CONTAR BALDAS ──
+  const totalBaldas = document.querySelectorAll('[data-tipo="balda"]').length;
+  document.getElementById('baldas-count').textContent = totalBaldas;
+ 
+  // ── SELECCIÓN ──
+  let activo = null;
+ 
+  function seleccionar(el) {
+ 
+    // Deseleccionar anterior
+    if (activo) activo.classList.remove('active');
+ 
+    // Activar nuevo
+    el.classList.add('active');
+    activo = el;
+ 
+    const nombre    = el.dataset.nombre;
+    const tipo      = el.dataset.tipo;
+    const contenido = el.dataset.contenido;
+    const parent    = el.dataset.parent;
+ 
+    const panel = document.getElementById('info-panel');
+    const stat  = document.getElementById('seleccionado-stat');
+ 
+    // Actualizar stat bar
+    stat.innerHTML = `seleccionado: <strong>${nombre}</strong>`;
+ 
+    // Construir breadcrumb
+    let breadcrumb = '';
+    if (parent && parent !== '—') {
+      breadcrumb = `<div class="info-breadcrumb">dentro de ${parent}</div>`;
+    } else {
+      breadcrumb = `<div class="info-breadcrumb">elemento principal</div>`;
+    }
+ 
+    // Tipo pill
+    const tipoLabel = tipo === 'armario' ? 'Armario' : 'Balda';
+    const tipoClass = tipo === 'armario' ? 'arm' : 'bld';
+ 
+    panel.classList.add('has-data');
+    panel.innerHTML = `
+      <div class="info-top">
+        <span class="info-tipo ${tipoClass}">${tipoLabel}</span>
+        <span class="info-nombre">${nombre}</span>
+      </div>
+      ${breadcrumb}
+      <p class="info-contenido">${contenido}</p>
+    `;
+  }
+ 
+</script>
+    </section>
+
+    <section id="inventario">
+        <h2>Material Destacado</h2>
+        <table>
+            <tr>
+                <th>Material</th>
+                <th>Categoría</th>
+                <th>Estado</th>
+                <th>Ubicación</th>
+            </tr>
+            <tr>
+                <td>Router Cisco</td>
+                <td>Red</td>
+                <td>Disponible</td>
+                <td>Armario A - Balda 1</td>
+            </tr>
+            <tr>
+                <td>SSD Samsung</td>
+                <td>Hardware</td>
+                <td>Prestado</td>
+                <td>Armario B - Balda 2</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="informes">
+        <h2>Generar Informes</h2>
+        <button onclick="descargarHTML()">Descargar Informe HTML</button>
+        <button onclick="descargarCSV()">Descargar CSV</button>
+    </section>
+</main>
+
+<footer>
+    <p>Proyecto DAM1 - 2025/2026</p>
+</footer>
+
+<script src="DescargarCSV-HTML.js"></script>
+</body>
+</html>
