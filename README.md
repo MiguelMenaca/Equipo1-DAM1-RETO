@@ -16,7 +16,7 @@ Incluye base de datos MySQL, aplicación Java conectada mediante JDBC y una pág
 - [Diagrama de Clases](#diagrama-de-clases)
 - [Resultados obtenidos](#resultados-obtenidos)
 - [Resultados esperados por módulo](#resultados-esperados-por-módulo)
-- [Licencia del proyecto](#licencia-de-Software)
+- [Licencia de Software](#licencia-de-Software)
 - [Documentación adicional](#documentación-adicional)
 - [Valoración del proyecto](#valoración-del-proyecto)
 - [Mejoras futuras](#mejoras-futuras)
