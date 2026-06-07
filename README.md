@@ -188,6 +188,7 @@ Estado:  ✅ Completado
 
 ## Manual de usuario
 [M-U Equipo 1.docx](https://github.com/user-attachments/files/28020907/M-U.Equipo.1.docx)
+[M-U Equipo 1.pdf](https://github.com/MiguelMenaca/Equipo1-DAM1-RETO/blob/main/M-U.Equipo.1.pdf)
 
 
 ---
