@@ -184,7 +184,7 @@ Estado:  ✅ Completado
 
 
 ## Guía de despliegue
-[GUIA DE DISPLEGUE equipo 1.docx](https://github.com/user-attachments/files/28026132/GUIA.DE.DISPLEGUE.equipo.1.docx)
+[GUIA DE DISPLEGUE equipo 1.pdf](https://github.com/MiguelMenaca/Equipo1-DAM1-RETO/blob/main/GUIA%20DE%20DISPLEGUE%20equipo1.pdf)
 
 
 ## Manual de usuario
