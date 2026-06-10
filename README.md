@@ -16,7 +16,7 @@ Incluye base de datos MySQL, aplicación Java conectada mediante JDBC y una pág
 - [Diagrama de Clases](#diagrama-de-clases)
 - [Resultados obtenidos](#resultados-obtenidos)
 - [Resultados esperados por módulo](#resultados-esperados-por-módulo)
-- [Licencia de Software](#licencia-de-Software)
+- [LICENSE.txt](#LICENSE.txt)
 - [Documentación adicional](#documentación-adicional)
 - [Valoración del proyecto](#valoración-del-proyecto)
 - [Mejoras futuras](#mejoras-futuras)
@@ -185,6 +185,7 @@ Estado:  ✅ Completado
 
 ## Guía de despliegue
 [GUIA DE DISPLEGUE equipo 1.docx](https://github.com/user-attachments/files/28026132/GUIA.DE.DISPLEGUE.equipo.1.docx)
+
 
 ## Manual de usuario
 [M-U Equipo 1.docx](https://github.com/user-attachments/files/28020907/M-U.Equipo.1.docx)
